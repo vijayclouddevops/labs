@@ -10,7 +10,8 @@ services:
        MYSQL_USER: wordpress
        MYSQL_PASSWORD: wordpress
      healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]  #The health check uses the mysqladmin ping command to check if MySQL is ready to accept connections.
+
       interval: 10s
       timeout: 5s
       retries: 5
